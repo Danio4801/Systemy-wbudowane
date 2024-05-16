@@ -1,4 +1,4 @@
-#define pushSwitchPinAddress 2
+int pushSwitchPinAddress = 2; // Poprawiona deklaracja pinu
 
 int previousButtonState = HIGH;
 int buttonState;
@@ -7,7 +7,7 @@ bool isAutoMode = false;
 void setup()
 {
     Serial.begin(9600);
-    pinMode(pushSwitchPinAddress, INPUT);
+    pinMode(pushSwitchPinAddress, INPUT_PULLUP); // Użycie wewnętrznego rezystora podciągającego
 }
 
 void loop()
